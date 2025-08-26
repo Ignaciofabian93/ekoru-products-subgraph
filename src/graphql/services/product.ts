@@ -150,7 +150,7 @@ export const ProductService = {
     }
   },
   getFeedProducts: async ({
-    take = 20,
+    take = 40,
     scope = "MARKET",
     isExchangeable,
     userId,
@@ -198,7 +198,7 @@ export const ProductService = {
           user: { isCompany, id: userId ? { not: userId } : undefined },
         },
         take,
-        orderBy: { createdAt: "desc" },
+        orderBy: { name: "asc" },
       });
 
       if (!products) {
