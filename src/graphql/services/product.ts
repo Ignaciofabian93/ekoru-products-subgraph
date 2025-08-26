@@ -150,7 +150,7 @@ export const ProductService = {
     }
   },
   getFeedProducts: async ({
-    take = 40,
+    take = 20,
     scope = "MARKET",
     isExchangeable,
     userId,
