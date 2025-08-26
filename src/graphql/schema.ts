@@ -213,6 +213,30 @@ export const typeDefs = gql`
 
   extend type Query {
     marketCatalog: [Department]
+
+    departments(take: Int, skip: Int, orderBy: OrderByInput): [Department]
+    department(id: ID!, take: Int, skip: Int, orderBy: OrderByInput): Department
+    productsByDepartment(departmentId: ID!, take: Int): [Product]
+
+    departmentCategoriesByDepartment(id: ID!, take: Int, skip: Int, orderBy: OrderByInput): [DepartmentCategory]
+    departmentCategories(take: Int, skip: Int, orderBy: OrderByInput): [DepartmentCategory]
+    departmentCategory(id: ID!, take: Int, skip: Int, orderBy: OrderByInput): DepartmentCategory
+    productsByDepartmentCategory(departmentCategoryId: ID!, take: Int): [Product]
+
+    productCategoriesByDepartmentCategory(id: ID!, take: Int, skip: Int, orderBy: OrderByInput): [ProductCategory]
+    productCategories(take: Int, skip: Int, orderBy: OrderByInput): [ProductCategory]
+    productCategory(id: ID!, take: Int, skip: Int, orderBy: OrderByInput): ProductCategory
+
+    productsByProductCategory(productCategoryId: ID!, take: Int, skip: Int, orderBy: OrderByInput): [Product]
+    products(take: Int, skip: Int, orderBy: OrderByInput): [Product]
+    product(id: ID!): Product
+
+    feedProducts(userId: ID!, isExchangeable: Boolean, take: Int!, scope: Scope!): [Product]
+    myFavorites(userId: ID!): [Product]
+    myProducts(userId: ID!, isExchangeable: Boolean, take: Int, skip: Int, orderBy: OrderByInput): [Product]
+
+    co2ImpactMessages(value: Float): Co2ImpactMessage
+    waterImpactMessages(value: Float): WaterImpactMessage
   }
 
   extend type Mutation {
