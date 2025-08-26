@@ -198,7 +198,7 @@ export const ProductService = {
           user: { isCompany, id: userId ? { not: userId } : undefined },
         },
         take,
-        orderBy: { name: "asc" },
+        orderBy: { createdAt: "asc" },
       });
 
       if (!products) {
