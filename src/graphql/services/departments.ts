@@ -125,6 +125,9 @@ export const DepartmentService = {
               departmentId: parsedDepartmentId,
             },
           },
+          user: {
+            isCompany: false,
+          },
         },
         select: {
           ...productSelect,

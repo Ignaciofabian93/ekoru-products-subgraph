@@ -116,6 +116,9 @@ export const ProductCategoriesService = {
       const products = await prisma.product.findMany({
         where: {
           productCategoryId: parsedId,
+          user: {
+            isCompany: false,
+          },
         },
         select: {
           ...productSelect,

@@ -184,6 +184,9 @@ export const DepartmentCategoriesService = {
           productCategory: {
             departmentCategoryId: parsedId,
           },
+          user: {
+            isCompany: false,
+          },
         },
         select: {
           ...productSelect,
